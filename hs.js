@@ -25,7 +25,7 @@ exports.removePaywall = async(id) => {
         }
     });
 
-    if (response.data.analyticsMetadata.paywallStatus !== 'paid')
+    if (!response.data.analyticsMetadata.paywallStatus.includes('paid'))
         return 'paid';
 
     text = "";
